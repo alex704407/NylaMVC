@@ -1,0 +1,33 @@
+﻿@page
+@{
+    ViewBag.Title = "StudentHome";
+    Layout = "~/Views/Shared/_LayoutSH.cshtml";
+}
+
+
+    <div class="container">
+        <button class="btn btn-outline-primary"><span><i class="far fa-user-circle"></i></span>&nbsp;@ViewBag.user</button>
+        <hr style="background-color:lightblue;" />
+        <div class="col">
+            @{
+                foreach (var course in ViewBag.Courses)
+                {
+                        <div class="card bg-white shadow">
+                            <form method="post">
+                                <div class="card-body text-left">
+                                    <p class="card-text float-left">@course.Course_name</p>
+                                    <div class="float-right" style="padding-bottom:10px;">
+                                        <input type="submit" class="btn btn-outline-primary"  value="Enroll">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    <br />
+                }
+            }
+
+        </div>
+
+    </div>
+
+

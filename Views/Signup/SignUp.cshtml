@@ -1,0 +1,93 @@
+﻿@model NylaMVC.ViewModels.SignUpViewModel;
+@{
+    ViewData["Title"] = "SignUp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+
+<style>
+    span label b {
+        font-size: 18px;
+    }
+</style>
+
+<div class="container">
+    <div style="margin:auto;">
+        <div class="border border-light shadow">
+            <div class="m-3 text-center">
+                <br />
+                <h2><b>Become a NylaFellow</b></h2>
+                <br /><br />
+                <form method="post">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-row">
+                        <div class="col">
+                            <span><label><b>First Name:</b></label></span>
+
+                            <input type="text" asp-for="FName" class="form-control" placeholder="John" />
+                            <span asp-validation-for="FName" class="text-warning"></span>
+                        </div>
+
+                        <div class="col">
+                            <span><label asp-for="LName"><b>Last Name:</b></label></span>
+
+                            <input type="text"  asp-for="LName" class="form-control" placeholder="Davis" />
+                            <span asp-validation-for="LName" class="text-warning"></span>
+                        </div>
+                    </div>
+
+                    <br /><br />
+
+                    <div class="form-row">
+                        <div class="col">
+                            <span><label asp-for="Password"><b>Password:</b></label></span>
+
+                            <input type="password" asp-for="Password" class="form-control" placeholder="********" />
+                            <span asp-validation-for="Password" class="text-warning"></span>
+                        </div>
+
+                        <div class="col">
+                            <span><label asp-for="ConfirmPassword"><b>Confirm Password:</b></label></span>
+
+                            <input type="password" asp-for="ConfirmPassword" class="form-control" placeholder="********" />
+                            <span asp-validation-for="ConfirmPassword" class="text-warning"></span>
+                        </div>
+                    </div>
+
+                    <br /><br />
+
+                    <div class="form-row">
+                        <div class="col">
+                            <span><label asp-for="Contact"><b>Contact:</b></label></span>
+
+                            <input type="text" asp-for="Contact" class="form-control" placeholder="(876) ###-####" />
+                            <span asp-validation-for="Contact" class="text-warning"></span>
+                        </div>
+
+                        <div class="col">
+                            <span><label asp-for="Email"><b>Email:</b></label></span>
+
+                            <input type="email" asp-for="Email"  runat="server" class="form-control" placeholder="example@gmail.com" />
+                            <span asp-validation-for="Email" class="text-warning"></span>
+                        </div>
+                    </div>
+
+                    <br /><br />
+
+                    <div class="row">
+                        <div class="col">
+                            <a style="font-size:16px;" asp-action="SignIn" asp-controller="login" class="nav-link">Login instead</a>
+                        </div>
+                        <div class="col">
+                            <input type="submit" @*asp-action="SignUpPost" asp-controller="signup"*@ class="btn btn-outline-primary" value="Apply Now" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
