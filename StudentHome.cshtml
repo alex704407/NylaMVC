@@ -1,0 +1,46 @@
+﻿@page
+@{
+    ViewBag.Title = "StudentHome";
+    Layout = "~/Views/Shared/_LayoutSH.cshtml";
+}
+
+
+<div class="container">
+
+    <button class="btn btn-outline-primary"><span><i class="far fa-user-circle"></i></span>&nbsp;@ViewBag.user</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    @{
+        if (ViewBag.MSG != null && ViewBag.MSG == "Enrolled Successfully")
+        {
+            <span class="alert alert-success w-100">@ViewBag.MSG</span>
+        }
+        else if (ViewBag.MSG != null && ViewBag.MSG == "You have already enrolled into this course")
+        {
+            <span class="alert alert-warning w-100">@ViewBag.MSG</span>
+        }
+    }
+    <hr style="background-color:lightblue;" />
+    <div class="col">
+        @{
+            foreach (var course in ViewBag.Courses)
+            {
+                <div class="card bg-white shadow">
+                    <form method="post">
+                        <div class="card-body text-left">
+                            <p id="" class="card-text float-left">@course.Course_name</p>
+                            <div class="float-right" style="padding-bottom:10px;">
+                                <input type="submit" class="btn btn-outline-primary" name="enrollbtn" value="@course.Course_id - Enroll">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <br />
+            }
+        }
+
+
+    </div>
+
+</div>
+
+
